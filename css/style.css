@@ -1,0 +1,66 @@
+body{
+    background-color: #f7fafc;
+}
+
+.container{
+  padding-left: 30px;
+  padding-right: 30px;
+    
+}
+
+.container {
+    max-width: 1280px;
+}
+
+.radius{
+    border-radius: 10px;
+}
+
+#card-terkonfirmasi{
+    border: solid 1px;
+    background-color: rgb(252, 223, 224);
+    border-color: rgb(255, 180, 181);
+}
+
+#card-sembuh{
+    border: solid 1px;
+    background-color: rgb(211, 238, 227);
+    border-color: rgb(145, 220, 189);
+}
+
+#card-meninggal{
+    border: solid 1px;
+    background-color: rgb(251, 234, 223);
+    border-color: rgb(254, 209, 177);
+}
+
+.bg-merah{
+    background-color: #ef6464;
+}
+.bg-hijau{
+    background-color: #3bb46e;
+}
+.bg-kuning{
+    background-color: #efa965;
+}
+
+.text-hijau{
+    color: rgb(45, 172, 85);
+}
+.font-besar{
+    font-size: 35px;
+}
+.font-sedang{
+    font-size: 25px;
+}
+.font-kecil{
+    font-size: 15px;
+    
+}
+#loading{
+    margin: 200px;
+}
+
+ /* *{
+    border: 1px solid black;
+}  */

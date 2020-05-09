@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+<body>
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white shadow ">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pusat Informasi Covid-19</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="tabeldata.html">Tabel Data</a>
+                <a class="nav-item nav-link" href="data.html">Data Jabar</a>
+                <a class="nav-item nav-link active" href="berita.html">Berita<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="faq.html">FAQ</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Berita Kesehatan</h2>
+        <img src="img/ajax-loader.gif" class="mx-auto d-block" id="loading">
+        <div id="berita">
+        </div>
+        <div class="text-center py-2 my-5 bg-hijau text-white  radius shadow">© 2020 Copyright : KLMPK1</div>
+    </div>
+
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=14e79a08ecbb4fee8e2e5c9b5af2be36",
+                "method": "GET"
+            }
+            $.ajax(settings).done(function (response) {
+                $('#loading').remove();
+                for (i in response.articles) {
+                    $('#berita').append('<div class="row  align-items-center mt-5 m-1 radius px-3 py-4 shadow bg-white"><div class="col-8"><a href="'+response.articles[i].url+'"><p class=" text-hijau font-weight-bold">'+response.articles[i].title+'</p><a><p class="text-muted">'+response.articles[i].author+', '+response.articles[i].publishedAt.split("T")[0]+'</p><p>'+response.articles[i].content+'</p></div><div class="col-4"><img src="'+response.articles[i].urlToImage+'" class="img-fluid rounded" alt=""></div></div>');
+                } 
+                console.log(response.articles);
+                
+            });
+        
+        });
+
+    </script>
+</body>
+</html>
+

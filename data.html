@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+<body>
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white shadow ">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pusat Informasi Covid-19</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="tabeldata.html">Tabel Data</a>
+                <a class="nav-item nav-link active" href="data.html">Data Jabar<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="berita.html">Berita</a>
+                <a class="nav-item nav-link " href="faq.html">FAQ</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h3>Dasboard Kasus COVID-19 Provinsi Jawa Barat</h3>
+        <h5>*Update Terakhir : <span id="terakhirupdate"></span></h5>
+        <!-- row pertama -->
+        <div class="row mt-5">
+            <div class="col-4">
+                <div class="radius p-3 shadow" id="card-terkonfirmasi">
+                    <span class="font-kecil text-muted">TERKONFIRMASI</span>
+                    <div class="row font-weight-bold">
+                        <div class="col-6"><h4>Jawa Barat</h4></div> 
+                        <div class="col-6 text-right "><h4><span id="positifjb">0</span><span class="radius px-1 text-white bg-merah ml-1" id="positifharianjb">+0</span></h4></div>      
+                    </div>   
+                    <div class="row font-weight-bold">
+                        <div class="col-6"><h5>Indonesia</h5></div> 
+                        <div class="col-6 text-right"><span id="positifid">0</span><span class="radius px-1 text-white bg-merah ml-1" id="positifharianid">+0</span></div>      
+                    </div>      
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="radius p-3 shadow" id="card-sembuh">
+                    <span class="font-kecil text-muted">SEMBUH</span>
+                    <div class="row font-weight-bold">
+                        <div class="col-6"><h4>Jawa Barat</h4></div> 
+                        <div class="col-6 text-right "><h4><span id="sembuhjb">0</span><span class="radius px-1 text-white bg-hijau ml-1" id="sembuhharianjb">+0</span></h4></div>      
+                    </div>   
+                    <div class="row font-weight-bold">
+                        <div class="col-6"><h5>Indonesia</h5></div> 
+                        <div class="col-6 text-right "><span id="sembuhid">0</span><span class="radius px-1 text-white bg-hijau ml-1" id="sembuhharianid">+0</span></div>      
+                    </div>      
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="radius p-3 shadow" id="card-meninggal">
+                    <span  class="font-kecil text-muted">MENINGGAL</span>
+                    <div class="row font-weight-bold">
+                        <div class="col-6"><h4>Jawa Barat</h4></div> 
+                        <div class="col-6 text-right "><h4><span id="meninggaljb">0</span><span class="radius px-1 text-white bg-kuning ml-1" id="meninggalharianjb">+0</span></h4></div>      
+                    </div>   
+                    <div class="row font-weight-bold">
+                        <div class="col-6"><h5>Indonesia</h5></div> 
+                        <div class="col-6 text-right "><span id="meninggalid">0</span><span class="radius px-1 text-white bg-kuning ml-1" id="meninggalharianid">+0</span></div>      
+                    </div>      
+                </div>
+            </div>
+        </div> 
+        <!-- row kedua -->
+        <div class="row mt-5">
+            <div class="col-6">
+                <div class="radius p-3 shadow">
+                    <h4>ODP (Orang Dalam Pemantauan)</h4>
+                    <hr>
+                    <div class="row align-items-end">
+                        <div class="col-4">
+                            <span class="text-hijau font-besar" id="odpprosesjb">0</span><span class="font-weight-bold" id="persenodpprosesjb">(0%)</span><br>
+                            <span class="text-muted">Proses Pemantauan</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="text-hijau font-sedang" id="odpselesaijb">0</span><span class="font-weight-bold" id="persenodpselesaijb">(0%)</span><br>
+                            <span class="text-muted">Selesai Pemantauan</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="text-hijau font-sedang" id="odptotaljb">0</span><br>
+                            <span class="text-muted">Total ODP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="radius p-3 shadow">
+                    <h4>PDP (Pasien Dalam Pemantauan)</h4>
+                    <hr>
+                    <div class="row align-items-end">
+                        <div class="col-4">
+                            <span class="text-hijau font-besar" id="pdpprosesjb">0</span><span class="font-weight-bold" id="persenpdpprosesjb">(0%)</span><br>
+                            <span class="text-muted">Proses Pengwasan</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="text-hijau font-sedang" id="pdpselesaijb">0</span><span class="font-weight-bold" id="persenpdpselesaijb">(0%)</span><br>
+                            <span class="text-muted">Selesai Pengawasan</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="text-hijau font-sedang"  id="pdptotaljb">0</span><br>
+                            <span class="text-muted">Total PDP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row ketiga -->
+        <div class="row row-cols-2  align-items-end mt-5 m-1 radius px-3 py-4 shadow bg-hijau">
+            <div class="col-6 text-white">
+                <p class="font-sedang">RDT (Rapid Diagnostic Test)</p>    
+                <span class="font-kecil">
+                    Rapid Diagnostic Test (RDT) atau test diagnostik cepat merupakan test yang digunakan sebagai skrining medis awal untuk mendeteksi COVID-19.
+                    Pada hasil RDT yang Reaktif akan dilakukan pemeriksaan konfirmasi lebih lanjut dengan metode Polymerase Chain Reaction (PCR).
+                </span> 
+            </div>
+            <div class="col-6 text-white">
+                    <span class="text-white font-besar" id="rdttotaljb"></span><br>
+                    <span class="text-white font-kecil">Jumlah RDT</span>
+            </div>
+            <div class="offset-6 col-6 mt-4">
+                <div class="row align-items-end text-white">
+                    <div class="col-4">
+                        <span class="font-sedang" id="rdtpositifjb">0</span><span class="font-kecil" id="persenrdtpositifjb">(0%)</span><br>
+                        <span class="font-kecil">Reaktif</span>
+                    </div>
+                    <div class="col-4">
+                        <span class="font-sedang" id="rdtnegatifjb">0</span><span class="font-kecil" id="persenrdtnegatifjb">(0%)</span><br>
+                        <span class="font-kecil">Non Reaktif</span>
+                    </div>
+                    <div class="col-4">
+                        <span class="font-sedang" id="rdtinvalidjb">0</span><span class="font-kecil" id="persenrdtinvalidjb">(0%)</span><br>
+                        <span class="font-kecil">invalid</span>
+                    </div>
+
+                </div>
+            </div>
+         </div>
+          <!-- row keempat-->
+        <div class="row  align-items-end mt-5 m-1 radius px-3 py-4 shadow bg-info">
+            <div class="col-6 text-white">
+                <p class="font-sedang">PCR (Polymerase Chain Reaction)</p>    
+                <span class="font-kecil">
+                    Polymerase Chain Reaction atau PCR merupakan pemeriksaan diagnostik yang dianggap paling akurat untuk memastikan apakah seseorang menderita COVID-19 atau tidak.
+                </span> 
+            </div>
+            <div class="col-6 text-white">
+                <div class="row align-items-end text-white">
+                    <div class="col-4">
+                        <span class="font-besar" id="pcrtotaljb">0</span><br>
+                        <span class="font-kecil">Jumlah PCR</span>
+                    </div>
+                    <div class="col-4">
+                        <span class="font-sedang" id="pcrpositifjb">0</span><span class="font-kecil" id="persenpcrpositifjb">(0%)</span><br>
+                        <span class="font-kecil">positif</span>
+                    </div>
+                    <div class="col-4">
+                        <span class="font-sedang" id="pcrnegatifjb">0</span><span class="font-kecil" id="persenpcrnegatifjb">(0%)</span><br>
+                        <span class="font-kecil">negatif</span>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="text-center py-2 my-5 bg-hijau text-white radius shadow">© 2020 Copyright : KLMPK1</div>
+    </div>
+    
+
+
+
+
+
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var datas = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar",
+                "method": "GET",
+            }
+            $.ajax(datas).done(function (response) {
+                console.log(response.data.content);
+                $('#positifjb').html(response.data.content.positif);
+                $('#sembuhjb').html(response.data.content.sembuh);
+                $('#meninggaljb').html(response.data.content.meninggal);
+                $('#odpprosesjb').html(response.data.content.odp_proses);
+                $('#odpselesaijb').html(response.data.content.odp_selesai);
+                $('#persenodpprosesjb').html('('+(response.data.content.odp_proses/response.data.content.odp_total*100).toFixed(2)+'%)');
+                $('#persenodpselesaijb').html('('+(response.data.content.odp_selesai/response.data.content.odp_total*100).toFixed(2)+'%)');
+                $('#odptotaljb').html(response.data.content.odp_total);
+                $('#pdpprosesjb').html(response.data.content.pdp_proses);
+                $('#pdpselesaijb').html(response.data.content.pdp_selesai);
+                $('#persenpdpprosesjb').html('('+(response.data.content.pdp_proses/response.data.content.pdp_total*100).toFixed(2)+'%)');
+                $('#persenpdpselesaijb').html('('+(response.data.content.pdp_selesai/response.data.content.pdp_total*100).toFixed(2)+'%)');
+                $('#pdptotaljb').html(response.data.content.pdp_total);
+                $('#rdttotaljb').html(response.data.content.rdt.total);
+                $('#rdtpositifjb').html(response.data.content.rdt.positif);
+                $('#rdtnegatifjb').html(response.data.content.rdt.negatif);
+                $('#rdtinvalidjb').html(response.data.content.rdt.invalid);
+                $('#persenrdtpositifjb').html('('+(response.data.content.rdt.positif/response.data.content.rdt.total*100).toFixed(2)+'%)');
+                $('#persenrdtnegatifjb').html('('+(response.data.content.rdt.negatif/response.data.content.rdt.total*100).toFixed(2)+'%)');
+                $('#persenrdtinvalidjb').html('('+(response.data.content.rdt.invalid/response.data.content.rdt.total*100).toFixed(2)+'%)');
+                $('#pcrtotaljb').html(response.data.content.pcr.jumlah_sampling);
+                $('#pcrpositifjb').html(response.data.content.pcr.positif);
+                $('#pcrnegatifjb').html(response.data.content.pcr.negatif);
+                $('#persenpcrpositifjb').html('('+(response.data.content.pcr.positif/response.data.content.pcr.jumlah_sampling*100).toFixed(2)+'%)');
+                $('#persenpcrnegatifjb').html('('+(response.data.content.pcr.negatif/response.data.content.pcr.jumlah_sampling*100).toFixed(2)+'%)');
+            });
+            var dataHarians = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar/harian",
+                "method": "GET",
+            }
+            $.ajax(dataHarians).done(function (response) {
+                $('#positifharianjb').html('+'+response.data.content[response.data.content.length-1].positif);
+                $('#sembuhharianjb').html('+'+response.data.content[response.data.content.length-1].sembuh);
+                $('#meninggalharianjb').html('+'+response.data.content[response.data.content.length-1].meninggal);
+            });
+            var dataIDs = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://indonesia-covid-19.mathdro.id/api",
+                "method": "GET",
+            }
+            $.ajax(dataIDs).done(function (response) {
+                $('#positifid').html(response.jumlahKasus);
+                $('#sembuhid').html(response.sembuh);
+                $('#meninggalid').html(response.meninggal);
+            });
+            var dataHarianIDs = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://indonesia-covid-19.mathdro.id/api/harian",
+                "method": "GET",
+            }
+            $.ajax(dataHarianIDs).done(function (response) {
+                var date = new Date (response.data[response.data.length-1].tanggal)
+                var tahun = date.getFullYear();
+                var bulan = date.getMonth();
+                var tanggal = date.getDate();
+                var hari = date.getDay();
+                var jam = ("0" + date.getHours()).slice(-2);
+                var menit = ("0" + date.getMinutes()).slice(-2);
+                var detik = ("0" + date.getSeconds()).slice(-2);
+                switch(hari) {
+                    case 0: hari = "Minggu"; break;
+                    case 1: hari = "Senin"; break;
+                    case 2: hari = "Selasa"; break;
+                    case 3: hari = "Rabu"; break;
+                    case 4: hari = "Kamis"; break;
+                    case 5: hari = "Jum'at"; break;
+                    case 6: hari = "Sabtu"; break;
+                }
+                switch(bulan) {
+                    case 0: bulan = "Januari"; break;
+                    case 1: bulan = "Februari"; break;
+                    case 2: bulan = "Maret"; break;
+                    case 3: bulan = "April"; break;
+                    case 4: bulan = "Mei"; break;
+                    case 5: bulan = "Juni"; break;
+                    case 6: bulan = "Juli"; break;
+                    case 7: bulan = "Agustus"; break;
+                    case 8: bulan = "September"; break;
+                    case 9: bulan = "Oktober"; break;
+                    case 10: bulan = "November"; break;
+                    case 11: bulan = "Desember"; break;
+                }
+                var tanggal = hari + ", " + tanggal + " " + bulan + " " + tahun+" " + jam + ":" + menit + ":" + detik;
+                $('#terakhirupdate').html(tanggal);
+                $('#positifharianid').html('+'+response.data[response.data.length-1].jumlahKasusBaruperHari);
+                $('#sembuhharianid').html('+'+response.data[response.data.length-1].jumlahKasusSembuhperHari);
+                $('#meninggalharianid').html('+'+response.data[response.data.length-1].jumlahKasusMeninggalperHari);
+            });
+            
+            
+        });
+    </script>
+</body>
+</html>

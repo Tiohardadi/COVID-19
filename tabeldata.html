@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+<body>
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white shadow ">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pusat Informasi Covid-19</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link active" href="tabeldata.html">Tabel Data<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="data.html">Data Jabar</a>
+                <a class="nav-item nav-link" href="berita.html">Berita</a>
+                <a class="nav-item nav-link " href="faq.html">FAQ</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Tabel Covid Indonesia</h2>
+        <div class="radius p-3 mt-3 bg-white shadow">
+            <table class="table" id="tabel">
+                <tr class="bg-hijau">
+                    <td>No</td>
+                    <td>Provinsi</td>
+                    <td>Positif</td>
+                    <td>Sembuh</td>
+                    <td>Meinggal</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 class="mt-5">Tabel Covid Dunia</h2>
+        <div class="radius p-3 mt-3 bg-white shadow">
+            <table class="table" id="tabeldunia">
+                <tr class="bg-hijau">
+                    <td>No</td>
+                    <td>Negara</td>
+                    <td>Positif</td>
+                    <td>Sembuh</td>
+                    <td>Meinggal</td>
+                </tr>
+            </table>
+        </div>
+        <div class="text-center py-2 my-5 bg-hijau text-white  radius shadow">© 2020 Copyright : KLMPK1</div>
+    </div>
+
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var dataIDs = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://indonesia-covid-19.mathdro.id/api/provinsi",
+                "method": "GET"
+            }
+            $.ajax(dataIDs).done(function (response) {
+                for (i in response.data) {
+                    $('#tabel').append('<tr><td>'+(parseInt(i)+1)+'</td><td>'+response.data[i].provinsi+'</td><td>'+response.data[i].kasusPosi+'</td><td>'+response.data[i].kasusSemb+'</td><td>'+response.data[i].kasusMeni+'</td></tr>');
+                } 
+                
+            });
+
+            var datas = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://covid-19-data.p.rapidapi.com/country/all?format=json",
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+                    "x-rapidapi-key": "4083a915acmshaa47ad8a1fd6167p11abf0jsnbb6045ea738d"
+                }
+            }
+
+            $.ajax(datas).done(function (response) {
+                for (i in response) {
+                    $('#tabeldunia').append('<tr><td>'+(parseInt(i)+1)+'</td><td>'+response[i].country+'</td><td>'+response[i].confirmed+'</td><td>'+response[i].recovered+'</td><td>'+response[i].deaths+'</td></tr>');
+                } 
+                console.log(response);
+            });
+        
+        });
+
+    </script>
+</body>
+</html>
+
