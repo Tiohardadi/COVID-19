@@ -32,7 +32,7 @@
     <div class="container mt-5">
         <h2>Tabel Covid Indonesia</h2>
         <div class="radius p-3 mt-3 bg-white shadow">
-            <table class="table table-responsive" id="tabel">
+            <table class=" table table-responsive-lg" id="tabel">
                 <tr class="bg-hijau">
                     <td>No</td>
                     <td>Provinsi</td>
@@ -45,7 +45,7 @@
 
         <h2 class="mt-5">Tabel Covid Dunia</h2>
         <div class="radius p-3 mt-3 bg-white shadow">
-            <table class="table table-responsive" id="tabeldunia">
+            <table class="table table-responsive-lg" id="tabeldunia">
                 <tr class="bg-hijau">
                     <td>No</td>
                     <td>Negara</td>
@@ -78,17 +78,13 @@
             var datas = {
                 "async": true,
                 "crossDomain": true,
-                "url": "https://covid-19-data.p.rapidapi.com/country/all?format=json",
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-                    "x-rapidapi-key": "4083a915acmshaa47ad8a1fd6167p11abf0jsnbb6045ea738d"
-                }
+                "url": "https://corona.lmao.ninja/v2/countries?yesterday&sort",
+                "method": "GET"
             }
 
             $.ajax(datas).done(function (response) {
                 for (i in response) {
-                    $('#tabeldunia').append('<tr><td>'+(parseInt(i)+1)+'</td><td>'+response[i].country+'</td><td>'+response[i].confirmed+'</td><td>'+response[i].recovered+'</td><td>'+response[i].deaths+'</td></tr>');
+                    $('#tabeldunia').append('<tr><td>'+(parseInt(i)+1)+'</td><td>'+response[i].country+'</td><td>'+response[i].cases+'</td><td>'+response[i].recovered+'</td><td>'+response[i].deaths+'</td></tr>');
                 } 
                 console.log(response);
             });
@@ -98,4 +94,3 @@
     </script>
 </body>
 </html>
-
