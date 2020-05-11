@@ -281,9 +281,9 @@
                 }
                 var tanggal = hari + ", " + tanggal + " " + bulan + " " + tahun+" " + jam + ":" + menit + ":" + detik;
                 $('#terakhirupdate').html(tanggal);
-                $('#positifharianid').html('+'+response.data[response.data.length-1].jumlahKasusBaruperHari);
-                $('#sembuhharianid').html('+'+response.data[response.data.length-1].jumlahKasusSembuhperHari);
-                $('#meninggalharianid').html('+'+response.data[response.data.length-1].jumlahKasusMeninggalperHari);
+                $('#positifharianid').html('+'+response.data[response.data.length-2].jumlahKasusBaruperHari);
+                $('#sembuhharianid').html('+'+response.data[response.data.length-2].jumlahKasusSembuhperHari);
+                $('#meninggalharianid').html('+'+response.data[response.data.length-2].jumlahKasusMeninggalperHari);
             });
             
             
