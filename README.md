@@ -2,7 +2,7 @@
 
 Tugas WEB COVID-19 Kelompok 1 Pemrograman WEB - UNJANI
 
-link: https://pemweb-covid19.000webhostapp.com/
+link: https://covid19.gubuktekno.com
 
 Tools
 - VScode
