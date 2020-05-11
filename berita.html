@@ -50,7 +50,7 @@
             $.ajax(settings).done(function (response) {
                 $('#loading').remove();
                 for (i in response.articles) {
-                    $('#berita').append('<div class="row  align-items-center mt-5 m-1 radius px-3 py-4 shadow bg-white"><div class="col-8"><a href="'+response.articles[i].url+'"><p class=" text-hijau font-weight-bold">'+response.articles[i].title+'</p><a><p class="text-muted">'+response.articles[i].author+', '+response.articles[i].publishedAt.split("T")[0]+'</p><p>'+response.articles[i].content+'</p></div><div class="col-4"><img src="'+response.articles[i].urlToImage+'" class="img-fluid rounded" alt=""></div></div>');
+                    $('#berita').append('<div class="row  align-items-center mt-5 m-1 radius px-3 py-4 shadow bg-white"><div class="col-lg-8"><a href="'+response.articles[i].url+'"><p class=" text-hijau font-weight-bold">'+response.articles[i].title+'</p><a><p class="text-muted">'+response.articles[i].author+', '+response.articles[i].publishedAt.split("T")[0]+'</p><p>'+response.articles[i].content+'</p></div><div class="col-lg-4"><img src="'+response.articles[i].urlToImage+'" class="img-fluid rounded" alt=""></div></div>');
                 } 
                 console.log(response.articles);
                 
