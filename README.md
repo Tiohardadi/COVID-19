@@ -2,7 +2,7 @@
 
 Tugas WEB COVID-19 Kelompok 1 Pemrograman WEB - UNJANI
 
-link: https://pemweb-covid19.000webhostapp.com/
+link: https://flamboyant-einstein-fca1d3.netlify.app/
 
 Tools
 - VScode
