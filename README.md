@@ -1,7 +1,5 @@
 # COVID-19
 
-Tugas WEB COVID-19 Kelompok 1 Pemrograman WEB - UNJANI
-
 link: https://pemweb-covid19.netlify.app/
 
 Tools
